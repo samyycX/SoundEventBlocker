@@ -25,7 +25,6 @@ public class SoundEventListener {
 
     core.NetMessage.HookServerMessage<CMsgSosStartSoundEvent>(msg => {
       var currentConfig = config.CurrentValue;
-      Console.WriteLine(msg.SoundeventHash);
 
       if (!currentConfig.Enabled) return HookResult.Continue;
 
