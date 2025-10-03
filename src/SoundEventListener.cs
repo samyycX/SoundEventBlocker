@@ -20,6 +20,7 @@ public class SoundEventListener {
 
   public SoundEventListener(ISwiftlyCore core, IOptionsMonitor<ConfigModel> config, ILogger<SoundEventListener> logger) {
     _logger = logger;
+    ParseConfig(config.CurrentValue);
     config.OnChange(ParseConfig);
 
     core.NetMessage.HookServerMessage<CMsgSosStartSoundEvent>(msg => {
