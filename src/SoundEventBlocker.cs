@@ -11,6 +11,8 @@ public partial class SoundEventBlocker : BasePlugin {
   {
   }
 
+  private IServiceProvider _provider;
+
   public override void ConfigureSharedServices(IServiceCollection sharedServices) {
   }
 
@@ -33,9 +35,9 @@ public partial class SoundEventBlocker : BasePlugin {
       .AddOptionsWithValidateOnStart<ConfigModel>()
       .BindConfiguration("Main");
 
-    ServiceProvider provider = collection.BuildServiceProvider();
+    _provider = collection.BuildServiceProvider();
     
-    provider.GetRequiredService<SoundEventListener>();
+    _provider.GetRequiredService<SoundEventListener>();
     
   }
 
