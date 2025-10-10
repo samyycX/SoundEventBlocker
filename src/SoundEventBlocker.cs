@@ -5,9 +5,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace SoundEventBlocker;
 
-[PluginMetadata(Id = "SoundEventBlocker", Version = "1.0.1", Name = "SoundEventBlocker", Author = "samyyc", Description = "Block configured sound events.")]
+[PluginMetadata(Id = "SoundEventBlocker", Version = "1.0.2", Name = "SoundEventBlocker", Author = "samyyc", Description = "Block configured sound events.")]
 public class SoundEventBlocker(ISwiftlyCore core) : BasePlugin(core) {
-    private IServiceProvider _provider;
+    private IServiceProvider? _provider;
 
   public override void Load(bool hotReload) {
     Core.Configuration

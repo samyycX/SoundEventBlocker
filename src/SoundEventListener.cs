@@ -10,7 +10,7 @@ namespace SoundEventBlocker;
 public class SoundEventListener {
 
   private ImmutableHashSet<uint> _blockedEvents = [];
-  private ILogger<SoundEventListener> _logger;
+  private readonly ILogger<SoundEventListener> _logger;
 
   private void ParseConfig(ConfigModel cfg)
   {
