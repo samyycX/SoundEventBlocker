@@ -6,18 +6,8 @@ using Microsoft.Extensions.Configuration;
 namespace SoundEventBlocker;
 
 [PluginMetadata(Id = "SoundEventBlocker", Version = "1.0.1", Name = "SoundEventBlocker", Author = "samyyc", Description = "Block configured sound events.")]
-public partial class SoundEventBlocker : BasePlugin {
-  public SoundEventBlocker(ISwiftlyCore core) : base(core)
-  {
-  }
-
-  private IServiceProvider _provider;
-
-  public override void ConfigureSharedServices(IServiceCollection sharedServices) {
-  }
-
-  public override void UseSharedServices(IServiceProvider sharedProvider) {
-  }
+public class SoundEventBlocker(ISwiftlyCore core) : BasePlugin(core) {
+    private IServiceProvider _provider;
 
   public override void Load(bool hotReload) {
     Core.Configuration
